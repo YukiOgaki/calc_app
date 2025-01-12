@@ -1,0 +1,22 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class CalcController extends Controller
+{
+    public function calcs($value1, $operator, $value2)
+    {
+        if ($operator == 'addition') {
+            $result = $value1 + $value2;
+        } elseif ($operator == 'subtraction') {
+            $result = $value1 - $value2;
+        } elseif ($operator == 'multiplication') {
+            $result = $value1 * $value2;
+        } else {
+            $result = $value1 / $value2;
+        }
+        return view('message.calcs', ['result' => $result, 'value1' => $value1, 'value2' => $value2, 'operator' => $operator]);
+    }
+}
