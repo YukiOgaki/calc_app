@@ -17,6 +17,6 @@ class CalcController extends Controller
         } else {
             $result = $value1 / $value2;
         }
-        return view('message.calcs', ['result' => $result, 'value1' => $value1, 'value2' => $value2, 'operator' => $operator]);
+        return view('message.calcs', ['result' => $result]);
     }
 }
